@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Reddit Sans";
+}
+
+::-webkit-scrollbar {
+  background-color: black;
+  color:white;
+  width: 5px
+}
+
+::-webkit-scrollbar-track {
+  padding: 2px;
+}
+
+body{
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #f6f6f6;
+  border-radius: 2px;
+}

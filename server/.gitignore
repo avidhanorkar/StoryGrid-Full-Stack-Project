@@ -1,0 +1,43 @@
+# Node.js specific files
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# Environment variables
+.env
+.env.test
+
+# Logs
+logs
+*.log
+logs/*
+
+# Dependency directories
+jspm_packages/
+bower_components/
+
+# IDE and Editor files
+.vscode/
+.idea/
+.DS_Store
+
+# Build artifacts
+dist/
+build/
+out/
+
+# Coverage reports
+coverage/
+.nyc_output/
+
+# Temporary files
+.tmp/
+*.swp
+
+# Miscellaneous
+*.bak
+*.orig
+*.rej
