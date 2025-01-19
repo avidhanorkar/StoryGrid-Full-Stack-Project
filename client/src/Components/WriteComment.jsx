@@ -11,8 +11,14 @@ const WriteComment = ({ id }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault(); // Prevent default form submission
+    
     if (!user) {
-      console.error("User not authenticated");
+      console.error("Unauthorized: User not authenticated");
+      return;
+    }
+    
+    if (!comment.trim()) {
+      console.error("Comment cannot be empty");
       return;
     }
 
@@ -41,29 +47,23 @@ const WriteComment = ({ id }) => {
 
   return (
     <div className="w-full">
-      <form onSubmit={handleSubmit}>
-        <div className="mx-8 mb-4 border border-gray-500 rounded-lg bg-gray-50">
-          <div className="px-4 py-2 rounded-t-lg">
-            {user ? (
-              <div>
-                <label htmlFor="comment" className="sr-only">
-                  Your comment
-                </label>
-                <textarea
-                  onChange={handleChange}
-                  value={comment} // Ensure controlled component
-                  id="comment"
-                  rows="4"
-                  className="w-full px-0 text-sm resize-none text-gray-900 border-0 focus:outline-none"
-                  placeholder="Write a comment..."
-                  required
-                ></textarea>
-              </div>
-            ) : (
-              <p>You can't comment</p>
-            )}
-          </div>
-          {user && (
+      {user ? (
+        <form onSubmit={handleSubmit}>
+          <div className="mx-8 mb-4 border border-gray-500 rounded-lg bg-gray-50">
+            <div className="px-4 py-2 rounded-t-lg">
+              <label htmlFor="comment" className="sr-only">
+                Your comment
+              </label>
+              <textarea
+                onChange={handleChange}
+                value={comment} // Ensure controlled component
+                id="comment"
+                rows="4"
+                className="w-full px-0 text-sm bg-gray-200 resize-none text-gray-900 border-0 focus:outline-none"
+                placeholder="Write a comment..."
+                required
+              ></textarea>
+            </div>
             <div className="flex items-center justify-center px-3 py-2">
               <button
                 type="submit"
@@ -72,9 +72,11 @@ const WriteComment = ({ id }) => {
                 Post comment
               </button>
             </div>
-          )}
-        </div>
-      </form>
+          </div>
+        </form>
+      ) : (
+        <p className="text-center text-red-500">Unauthorized: You must be logged in to comment.</p>
+      )}
     </div>
   );
 };
