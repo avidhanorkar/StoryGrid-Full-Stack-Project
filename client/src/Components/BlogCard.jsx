@@ -5,7 +5,7 @@ const BlogCard = ({ title, author, likes, rating, onReadMore }) => {
 
 
   return (
-    <div className="blogCard hover:shadow-lg shadow-inner w-[400px] h-[180px] rounded-md border bg-black p-[25px] flex flex-col justify-between hover:bg-white hover:text-black transition-all duration-300">
+    <div className="blogCard hover:shadow-lg shadow-inner w-[400px] h-[180px] rounded-md border bg-white p-[25px] flex flex-col justify-between transition-all duration-300">
       {/* Title and Author */}
       <div>
         <p className="title text-2xl font-bold">{title}</p>
