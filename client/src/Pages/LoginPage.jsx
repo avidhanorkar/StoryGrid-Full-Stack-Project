@@ -32,7 +32,7 @@ const LoginPage = () => {
       if (response.ok) {
         const data = await response.json();
         localStorage.setItem("token", data.token);
-        navigate('/home')
+        navigate('/')
         window.location.reload();
       }
     } catch (error) {

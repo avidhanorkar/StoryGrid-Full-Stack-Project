@@ -9,7 +9,7 @@ const Navbar = () => {
   return (
     <>
       <div className="h-16 w-[100vw] flex justify-between items-center px-[50px] border-b-2">
-        <Link to={"/home"}>
+        <Link to={"/"}>
           <div className="flex items-center">
             <>
               <svg

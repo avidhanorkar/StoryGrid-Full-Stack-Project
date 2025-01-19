@@ -20,7 +20,7 @@ const App = () => {
           <div className="mx-[50px]">
             <Routes>
               <Route path="/" element={<LandingPage />} />
-              <Route path="/home" element={<LandingPage />} />
+              <Route path="/" element={<LandingPage />} />
               <Route path="/readBlog/:id" element={<ReadBlog />} />
               <Route path="/login" element={<LoginPage />} />
               <Route path="/signUp" element={<SignUpPage />} />
