@@ -59,7 +59,7 @@ const WriteComment = ({ id }) => {
                 value={comment} // Ensure controlled component
                 id="comment"
                 rows="4"
-                className="w-full px-0 text-sm bg-gray-200 resize-none text-gray-900 border-0 focus:outline-none"
+                className="w-full px-0 text-sm bg-gray-500 resize-none p-3 text-gray-900 border-0 focus:outline-none"
                 placeholder="Write a comment..."
                 required
               ></textarea>
