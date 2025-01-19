@@ -8,7 +8,7 @@ const BlogsListing = () => {
     const getBlogs = async () => {
       try {
         const response = await fetch(
-          `http://localhost:8000/api/v1/blog/getAll`
+          `https://storygrid-full-stack-project-1.onrender.com/api/v1/blog/getAll`
         );
 
         if (!response.ok) {

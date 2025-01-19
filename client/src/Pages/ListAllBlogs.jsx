@@ -12,7 +12,7 @@ const ListAllBlogs = () => {
       setLoading(true); // Step 2: Set loading to true before fetching
       try {
         const response = await fetch(
-          `http://localhost:8000/api/v1/blog/getUserBlog/${id}`
+          `https://storygrid-full-stack-project-1.onrender.com/api/v1/blog/getUserBlog/${id}`
         );
 
         if (!response.ok) {
@@ -31,7 +31,7 @@ const ListAllBlogs = () => {
 
     const getUser = async () => {
       try {
-        const response = await fetch(`http://localhost:8000/api/v1/user/${id}`);
+        const response = await fetch(`https://storygrid-full-stack-project-1.onrender.com/api/v1/user/${id}`);
         if (!response.ok) {
           console.error(`Error: ${response.status} - ${response.statusText}`);
           throw new Error("Network response was not ok");

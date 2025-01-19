@@ -22,7 +22,7 @@ const WriteBlog = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch(`http://localhost:8000/api/v1/blog/create`, {
+      const response = await fetch(`https://storygrid-full-stack-project-1.onrender.com/api/v1/blog/create`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

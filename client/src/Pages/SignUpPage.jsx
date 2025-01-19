@@ -26,7 +26,7 @@ const SignUpPage = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:8000/api/v1/user/register`,
+        `https://storygrid-full-stack-project-1.onrender.com/api/v1/user/register`,
         {
           method: "POST",
           headers: {

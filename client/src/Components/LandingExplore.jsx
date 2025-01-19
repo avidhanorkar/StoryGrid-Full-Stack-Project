@@ -12,7 +12,7 @@ const LandingExplore = () => {
       setLoading(true);
       try {
         const response = await fetch(
-          "http://localhost:8000/api/v1/blog/getAll"
+          "https://storygrid-full-stack-project-1.onrender.com/api/v1/blog/getAll"
         );
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);

@@ -19,7 +19,7 @@ const ReadBlog = () => {
       setLoading(true);
       try {
         const response = await fetch(
-          `http://localhost:8000/api/v1/blog/readOne/${id}`
+          `https://storygrid-full-stack-project-1.onrender.com/api/v1/blog/readOne/${id}`
         );
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -37,7 +37,7 @@ const ReadBlog = () => {
     const avgRating = async () => {
       try {
         const rate = await fetch(
-          `http://localhost:8000/api/v1/rating/getAvgRating/${id}`
+          `https://storygrid-full-stack-project-1.onrender.com/api/v1/rating/getAvgRating/${id}`
         );
         if (!rate.ok) {
           if (rate.status === 404) {
@@ -58,7 +58,7 @@ const ReadBlog = () => {
     const getComments = async () => {
       try {
         const response = await fetch(
-          `http://localhost:8000/api/v1/comment/getComments/${id}`
+          `https://storygrid-full-stack-project-1.onrender.com/api/v1/comment/getComments/${id}`
         );
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -80,7 +80,7 @@ const ReadBlog = () => {
 
   const ToggleLike = async () => {
     try {
-      const response = await fetch(`http://localhost:8000/api/v1/blog/toggleLike/${blog._id}`, {
+      const response = await fetch(`https://storygrid-full-stack-project-1.onrender.com/api/v1/blog/toggleLike/${blog._id}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

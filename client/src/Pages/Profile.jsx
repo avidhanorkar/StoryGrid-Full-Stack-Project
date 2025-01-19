@@ -21,7 +21,7 @@ const Profile = () => {
         setLoading(true); // Step 2: Set loading to true before fetching
         try {
           const response = await fetch(
-            `http://localhost:8000/api/v1/blog/getUserBlog/${id}`
+            `https://storygrid-full-stack-project-1.onrender.com/api/v1/blog/getUserBlog/${id}`
           );
 
           if (!response.ok) {
