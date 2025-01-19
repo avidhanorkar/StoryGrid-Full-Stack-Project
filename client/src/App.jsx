@@ -13,9 +13,9 @@ import WriteBlog from "./Pages/WriteBlog";
 
 const App = () => {
   return (
-    <div className="bg-black">
+    <div className="">
       <Router>
-        <div className="w-[100vw] bg-[#000] text-[#fff]">
+        <div className="w-[100vw] ">
           <Navbar />
           <div className="mx-[50px]">
             <Routes>

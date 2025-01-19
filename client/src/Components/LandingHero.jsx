@@ -38,6 +38,7 @@ const LandingHero = () => {
                   <Button
                     content="Browse Blogs"
                     border="2"
+                    textColor="black"
                     rounded
                     hoverShadow
                   />

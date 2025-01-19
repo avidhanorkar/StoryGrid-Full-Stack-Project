@@ -37,8 +37,9 @@ const Navbar = () => {
             content="Blogs"
             padding="px-3 py-2"
             fontWeight="font-semibold"
-            textColor="white"
+            textColor="black"
             rounded
+            hoverShadow
           />
 
           {!user ? (
@@ -50,7 +51,7 @@ const Navbar = () => {
                   rounded
                   hoverShadow
                   fontWeight="font-semibold"
-                  textColor="white"
+                  textColor="black"
                 />
               </Link>
 
@@ -74,7 +75,7 @@ const Navbar = () => {
                 rounded
                 hoverShadow
                 fontWeight="font-semibold"
-                textColor="white"
+                textColor="black"
               />
               <Link to={`/profile/${user.id}`}>
                 <Button
