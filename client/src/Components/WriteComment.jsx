@@ -38,7 +38,7 @@ const WriteComment = ({ id }) => {
     <div className="w-full">
       <form onSubmit={handleSubmit}>
         <div className="mx-8 mb-4 border border-gray-500 rounded-lg bg-gray-50">
-          <div className="px-4 py-2 bg-black rounded-t-lg">
+          <div className="px-4 py-2  rounded-t-lg">
             <label htmlFor="comment" className="sr-only">
               Your comment
             </label>
