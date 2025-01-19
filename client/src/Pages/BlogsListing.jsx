@@ -15,7 +15,6 @@ const BlogsListing = () => {
           throw new Error("Network response was not ok");
         }
         const result = await response.json();
-        console.log(result.blogs);
         setBlogs(result.blogs);
       } catch (error) {
         console.log("Failed to fetch blogs:", error);

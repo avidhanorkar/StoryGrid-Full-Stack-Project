@@ -11,7 +11,6 @@ const WriteComment = ({ id }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault(); // Prevent default form submission
-    console.log("Comment being sent:", comment);
     try {
       const response = await fetch(
         `https://storygrid-full-stack-project-1.onrender.com/api/v1/comment/createComment/${id}`, // Use the id from props
@@ -28,7 +27,6 @@ const WriteComment = ({ id }) => {
         throw new Error(await response.text()); // Get the error message
       }
 
-      console.log("Comment submitted successfully");
       window.location.reload();
       setComment(""); // Clear the textarea after successful submission
     } catch (error) {

@@ -5,7 +5,7 @@ const BlogListCard = ({ title, likes, author, rating, blog }) => {
   
 
   return (
-    <div className="w-[80vw] h-[150px] rounded-lg hover:drop-shadow-lg shadow-inner bg-black border-2 hover:bg-white hover:text-black transition-colors duration-300  p-5">
+    <div className="w-[80vw] h-[150px] rounded-lg hover:drop-shadow-lg shadow-inner bg-white border-2 text-black transition-colors duration-300  p-5">
       <div className="flex flex-col gap-3">
         <div className="flex flex-row justify-between">
           <div>

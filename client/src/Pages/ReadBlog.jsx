@@ -64,7 +64,6 @@ const ReadBlog = () => {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         const result = await response.json();
-        console.log(result)
         // Assuming the comments are in result.comments
         setComments(Array.isArray(result) ? result : []);
       } catch (error) {

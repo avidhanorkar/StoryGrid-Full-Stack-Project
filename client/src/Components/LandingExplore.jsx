@@ -18,7 +18,6 @@ const LandingExplore = () => {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         const result = await response.json();
-        console.log("API Response:", result); // Log the response to check its structure
         setData(result.blogs); // Set data to the blogs array
       } catch (error) {
         console.error("Fetch error: ", error);

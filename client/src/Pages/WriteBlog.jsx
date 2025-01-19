@@ -37,7 +37,6 @@ const WriteBlog = () => {
         throw new Error("Failed to submit blog");
       }
       navigate(`/listAllBlogs/${user.id}`);
-      console.log("Blog submitted successfully!");
     } catch (error) {
       console.error("Error submitting blog:", error);
     }
