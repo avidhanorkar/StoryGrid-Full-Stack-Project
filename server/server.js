@@ -9,9 +9,9 @@ configDotenv();
 const app = express();
 
 const corsOptions = {
-    origin: 'https://storygrid-full-stack-project-frontend.onrender.com', // Updated to allow the frontend's URL
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allowed HTTP methods
-    allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
+    origin: 'https://story-grid.vercel.app', 
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], 
+    allowedHeaders: ['Content-Type', 'Authorization'], 
     credentials: true,
 }
 app.use(cors(corsOptions));
