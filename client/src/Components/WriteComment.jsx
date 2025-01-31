@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { AuthContext } from "../Context/authContext";
 
 
-const WriteComment = ({ id }) => {
+const WriteComment = ({ id, getComments }) => {
   const [comment, setComment] = useState("");
   const { user } = useContext(AuthContext);
 
@@ -36,12 +36,12 @@ const WriteComment = ({ id }) => {
       );
 
       if (!response.ok) {
-        throw new Error(await response.text()); // Get the error message
-      }
+        throw new Error(await response.text()); 
 
-      setComment(""); // Clear textarea before reloading
+      setComment("");
+      getComments();
     } catch (error) {
-      console.error("Error submitting comment:", error.message); // Log any errors
+      console.error("Error submitting comment:", error.message); 
     }
   };
 
