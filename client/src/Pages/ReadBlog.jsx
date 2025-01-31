@@ -14,6 +14,23 @@ const ReadBlog = () => {
   const [comments, setComments] = useState([]);
   const {user} = useContext(AuthContext);
 
+   const getComments = async () => {
+      try {
+        const response = await fetch(
+          `https://storygrid-full-stack-project-1.onrender.com/api/v1/comment/getComments/${id}`
+        );
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const result = await response.json();
+        // Assuming the comments are in result.comments
+        setComments(Array.isArray(result) ? result : []);
+      } catch (error) {
+        console.error("Error fetching comments:", error);
+        setComments([]); // Set to an empty array on error
+      }
+    };
+  
   useEffect(() => {
     const fetchBlog = async () => {
       setLoading(true);
@@ -52,23 +69,6 @@ const ReadBlog = () => {
       } catch (error) {
         console.log(error);
         setRating(-1); // Set a fallback value for error cases
-      }
-    };
-
-    const getComments = async () => {
-      try {
-        const response = await fetch(
-          `https://storygrid-full-stack-project-1.onrender.com/api/v1/comment/getComments/${id}`
-        );
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const result = await response.json();
-        // Assuming the comments are in result.comments
-        setComments(Array.isArray(result) ? result : []);
-      } catch (error) {
-        console.error("Error fetching comments:", error);
-        setComments([]); // Set to an empty array on error
       }
     };
 
@@ -200,7 +200,7 @@ const ReadBlog = () => {
           </div>
 
           <div className="commenthere flex justify-center mx-8">
-            <WriteComment id={id} />
+            <WriteComment id={id} comments={getComments} />
           </div>
 
           <div className="mx-8 flex flex-col gap-3 ">
