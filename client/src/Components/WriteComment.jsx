@@ -1,10 +1,11 @@
 import React, { useState, useContext } from "react";
 import { AuthContext } from "../Context/authContext";
+import {useNavigate} from "react-router-dom";
 
 const WriteComment = ({ id }) => {
   const [comment, setComment] = useState("");
   const { user } = useContext(AuthContext);
-
+  const navigate = useNavigate();
   const handleChange = (event) => {
     setComment(event.target.value);
   };
@@ -39,6 +40,7 @@ const WriteComment = ({ id }) => {
       }
 
       setComment(""); // Clear textarea before reloading
+      navigate(`/readBlog/${id}`)
       window.location.reload();
     } catch (error) {
       console.error("Error submitting comment:", error.message); // Log any errors
@@ -59,7 +61,7 @@ const WriteComment = ({ id }) => {
                 value={comment} // Ensure controlled component
                 id="comment"
                 rows="4"
-                className="w-full px-0 text-sm bg-gray-500 resize-none p-3 text-gray-900 border-0 focus:outline-none"
+                className="w-full px-0 text-sm  resize-none p-3 text-black border-0 focus:outline-none"
                 placeholder="Write a comment..."
                 required
               ></textarea>
