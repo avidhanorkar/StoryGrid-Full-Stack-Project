@@ -40,7 +40,6 @@ const WriteComment = ({ id }) => {
       }
 
       setComment(""); // Clear textarea before reloading
-      window.location.reload();
     } catch (error) {
       console.error("Error submitting comment:", error.message); // Log any errors
     }
